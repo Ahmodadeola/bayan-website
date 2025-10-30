@@ -8,6 +8,7 @@ body {
     line-height: 30px;
     color: #333;
     box-sizing: border-box;
+    animation: fadeIn 2s ease-out forwards;
 }
 
 body > *:not(footer) {
@@ -55,7 +56,7 @@ a {
     transition: color 0.3s ease; /* Smooth color change */
 }
 
-.nav-link:hover, .nav-link:active {
+.nav-link:not:(last):hover, .nav-link:active {
     color: #FF5C95;
 }
 
@@ -64,11 +65,11 @@ a {
 }
 
 .contact-link {
-    border-radius: 16px;
+    width: 100px;
 }
 
 main {
-    padding: 2rem;
+    /* padding: 2rem; */
     text-align: center;
 }
 
@@ -79,7 +80,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    with: 100%
 }
 
 #hero > * {
@@ -88,6 +88,7 @@ main {
 
 p.hero-subtitle{
     font-size: 20px;
+    margin-bottom: 3rem;
 }
 
 h1.hero-title{
@@ -100,16 +101,169 @@ h1.hero-title{
 
 .explore-classes {
     border-radius: 40px;
+    width: 154px;
 }
 
+section#about-us{
+    margin: 3rem auto 3rem;
+}
 
+#interaction-imgs {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* margin: 3rem auto 3rem; */
+}
+
+#about-us-content {
+    margin: 3rem auto 3rem;
+     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+}
+
+#about-us-content > * {
+    flex: 1 1 0;
+}
 
 .link-btn {
+    border-radius: 16px;
     padding: 10px;
-    padding-left: 18px; 
-    padding-right: 18px; 
     background-color: #FF5C95;
     color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+.link-btn:hover {
+    color: white;
+}
+
+.more-link {
+    background-color: #5FC0E6;
+    width: 154px;
+    text-align: center;
+    display: inline-block;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 1rem;
+}
+
+.target-items {
+    margin-top: 3rem;
+    display: flex;
+    width: 100%;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.target-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.target-description {
+    width: 125px;
+}
+
+.process-cards {
+    margin-top: 2rem;
+}
+
+section#journey {
+    position: relative;
+    background: #F0FBFF80;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    box-sizing: border-box;
+}
+
+section#journey img {
+    height: auto;
+    width: auto;
+    position: absolute;
+}
+
+img.invoice {
+    left: 30%;
+    bottom: 0;
+}
+img.checkmark {
+    left: 37%;
+    bottom: 4rem;
+}
+img.bulb {
+    left: 42%;
+    bottom: 0;
+}
+img.books {
+    right: 20%;
+    top: 0;
+}
+
+h2.inline-title {
+    max-width: 400px;
+    text-align: left;
+    font-weight: 600;
+    line-height: 40px
+}
+
+a.enroll-link {
+    background: #4FA0BF;
+    border-radius: 40px;
+    width: 100px;
+}
+
+.flex-row {
+    display: flex;
+    width: 100%;
+}
+
+section#testimonies {
+    align-items: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    box-sizing: border-box;
+}
+
+section#testimonies > *{
+    flex: 1 1 0;
+}
+
+.testimony-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    border-width: 0px 10px 0px 10px;
+    border-style: solid;
+    border-color: #69D5FF;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    text-align: justify;
+}
+
+cite {
+    text-align: left;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+}
+
+section {
+    margin-bottom: 3rem;
 }
 
 footer {
@@ -117,7 +271,16 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    position: fixed;
     width: 100%;
-    bottom: 0;
 }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: add a slight slide-up effect */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
