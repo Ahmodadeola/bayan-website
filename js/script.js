@@ -7,6 +7,34 @@ window.addEventListener('scroll', function () {
     }
 });
 
+// Hamburger menu toggle
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navMenu = document.querySelector('nav ul');
+
+hamburgerMenu.addEventListener('click', function () {
+    // Toggle active class on hamburger button
+    hamburgerMenu.classList.toggle('active');
+
+    // Toggle active class on navigation menu
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a nav link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function () {
+        hamburgerMenu.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function (event) {
+    if (!event.target.closest('nav') && navMenu.classList.contains('active')) {
+        hamburgerMenu.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+});
+
 // Fade in animation on scroll
 const observerOptions = {
     threshold: 0.1,
